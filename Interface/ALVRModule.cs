@@ -8,7 +8,7 @@ using FBExpression;
 using FbMessage;
 using FbInputDriver;
 
-namespace ALVRModule
+namespace QuestProModule
 {
     using static FaceFb;
 
