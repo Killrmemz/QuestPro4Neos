@@ -59,7 +59,7 @@ public class QuestProMod : NeosMod
   /// <summary>
   /// The default port from ALVRs VRCFaceTracking OCS connection
   /// </summary>
-  private const int DefaultPort = 9620;
+  private const int DefaultPort = 41463;
 
   public override string Name => "QuestPro4Neos";
   public override string Author => "dfgHiatus & Geenz & Earthmark";
