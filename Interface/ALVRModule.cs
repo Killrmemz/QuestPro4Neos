@@ -10,9 +10,9 @@ using FbInputDriver;
 
 namespace QuestProModule
 {
-    using static FaceFb;
+    using static FbExpression;
 
-    public enum FaceFb
+    public enum FbExpression
     {
         BrowLowererL = 0,
         BrowLowererR = 1,
@@ -132,7 +132,7 @@ namespace QuestProModule
             eye.Left.PupilDiameter_MM = 0.5f;
             eye.Right.PupilDiameter_MM = 0.5f;
 
-            static void SetParam(float[] data, FaceFb input, UnifiedExpressions outputType)
+            static void SetParam(float[] data, FbExpression input, UnifiedExpressions outputType)
             {
                 UnifiedTracking.Data.Shapes[(int)outputType].Weight = data[(int)input];
             }
@@ -247,7 +247,7 @@ namespace QuestProModule
 
                 switch (str)
                 {
-                    case "FaceFb\0\0":
+                    case "FbExpression\0\0":
                         SetFaceFbParams(GetParams(packet, ref cursor, (int)FaceFbMax));
                         break;
                     default:
