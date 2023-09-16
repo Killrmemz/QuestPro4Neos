@@ -2,6 +2,9 @@
 
 A [NeosModLoader](https://github.com/zkxs/NeosModLoader) mod that brings the Quest Pro's [eye tracking](https://developer.oculus.com/documentation/unity/move-eye-tracking/) and [natural expressions](https://developer.oculus.com/documentation/unity/move-face-tracking/) to [Neos VR](https://neos.com/) avatars.
 
+This is my attempt to port over to ALVR's updated FT protocol.
+I haven't gotten very far, and I do not expect it to work. All I've done so far is modify a socket, attempt and fail to create an actions workflow to autobuild it, and throw in files from other related projects that don't even do anything. If you can make it build and make it work for you, more power to you. All appropriate licenses and credits for projects I've pulled files from are included in LICENSE. Go check them out, they probably understand what they're doing far better than what I do, and make stuff that actually works.
+
 Related issues on the Neos Github:
 1. https://github.com/Neos-Metaverse/NeosPublic/issues/1140
 1. https://github.com/Neos-Metaverse/NeosPublic/issues/3770
