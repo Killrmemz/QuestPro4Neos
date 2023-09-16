@@ -59,7 +59,7 @@ public class QuestProMod : NeosMod
   /// <summary>
   /// The default port from ALVRs VRCFaceTracking OCS connection
   /// </summary>
-  private const int DefaultPort = 9620;
+  private const int DefaultPort = 0xA1F7;
 
   public override string Name => "QuestPro4Neos";
   public override string Author => "dfgHiatus & Geenz & Earthmark";
@@ -81,7 +81,7 @@ public class QuestProMod : NeosMod
     public static void Postfix(InputInterface __instance)
     {
       _store = new SyncCell<FbMessage>();
-      _connection = new AlvrConnection(_config.TryGetValue(AlvrListenPort, out var port) ? port : DefaultPort, _store);
+      readonly UdpClient _connection = new AlvrConnection(_config.TryGetValue(AlvrListenPort, out var port) ? port : DefaultPort, _store);
       _driver = new FbInputDriver(_store);
       __instance.RegisterInputDriver(_driver);
 
@@ -194,7 +194,7 @@ public class QuestProMod : NeosMod
       if (@event.Config.TryGetValue(AlvrListenPort, out var listenPort))
       {
         _connection.Dispose();
-        _connection = new AlvrConnection(listenPort, _store);
+        readonly UdpClient _connection = new AlvrConnection(listenPort, _store);
       }
     }
   }
