@@ -3,9 +3,9 @@ using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using VRCFaceTracking;
-using VRCFaceTracking.Core.Params.Expressions;
-using static VRCFaceTracking.Core.Params.Expressions.UnifiedExpressions;
+//using VRCFaceTracking;
+//using VRCFaceTracking.Core.Params.Expressions;
+//using static VRCFaceTracking.Core.Params.Expressions.UnifiedExpressions;
 
 namespace QuestProModule
 {
@@ -79,7 +79,7 @@ namespace QuestProModule
         FaceFbMax = 63
     }
 
-    public class ALVRModule : ExtTrackingModule
+    public class ALVRModule //: ExtTrackingModule
     {
         const int PORT = 0xA1F7;
 
