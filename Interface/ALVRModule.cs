@@ -99,21 +99,21 @@ namespace QuestProModule
 //            return (true, true);
 //        }
 
-//        private static float[] GetParams(byte[] packet, ref int cursor, int param_count)
-//        {
-//            float[] data = new float[param_count];
-//            for (int i = 0; i < param_count; i++)
-//            {
-//                data[i] = BitConverter.ToSingle(packet, cursor + i * 4);
-//            }
-//            cursor += param_count * 4;
-//
-//            return data;
-//        }
-//
-//        private static void SetFaceFbParams(float[] p)
-//        {
-//            Debug.Assert(p.Length == (int)FaceFbMax);
+        private static float[] GetParams(byte[] packet, ref int cursor, int param_count)
+        {
+            float[] data = new float[param_count];
+            for (int i = 0; i < param_count; i++)
+            {
+                data[i] = BitConverter.ToSingle(packet, cursor + i * 4);
+            }
+            cursor += param_count * 4;
+
+            return data;
+        }
+
+        private static void SetFaceFbParams(float[] p)
+        {
+            Debug.Assert(p.Length == (int)FaceFbMax);
 //
 //            var eye = UnifiedTracking.Data.Eye;
 //            var expr = UnifiedTracking.Data.Shapes;
