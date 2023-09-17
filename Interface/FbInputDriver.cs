@@ -93,8 +93,8 @@ public class FbInputDriver : IInputDriver
     _eyes.LeftEye.RawPosition = leftEyeData.Position;
     _eyes.LeftEye.PupilDiameter = 0.004f;
     _eyes.LeftEye.Squeeze = leftEyeData.Squeeze;
-    _eyes.LeftEye.Frown = _c.Expressions[FbExpression.Lip_Corner_Puller_L] -
-                          _c.Expressions[FbExpression.Lip_Corner_Depressor_L] * EyeExpressionMulti;
+    _eyes.LeftEye.Frown = _c.Expressions[FaceFb.LipCornerPullerL] -
+                          _c.Expressions[FaceFb.LipCornerDepressorL] * EyeExpressionMulti;
 
     UpdateEye(_eyes.LeftEye, leftEyeData);
 
@@ -102,8 +102,8 @@ public class FbInputDriver : IInputDriver
     _eyes.RightEye.RawPosition = rightEyeData.Position;
     _eyes.RightEye.PupilDiameter = 0.004f;
     _eyes.RightEye.Squeeze = rightEyeData.Squeeze;
-    _eyes.RightEye.Frown = _c.Expressions[FbExpression.Lip_Corner_Puller_R] -
-                           _c.Expressions[FbExpression.Lip_Corner_Depressor_R] * EyeExpressionMulti;
+    _eyes.RightEye.Frown = _c.Expressions[FaceFb.LipCornerPullerR] -
+                           _c.Expressions[FaceFb.LipCornerDepressorR] * EyeExpressionMulti;
 
     UpdateEye(_eyes.RightEye, rightEyeData);
 
