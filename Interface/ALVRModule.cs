@@ -85,9 +85,9 @@ namespace QuestProModule
 
         readonly UdpClient socket = new(PORT);
 
-        public override (bool SupportsEye, bool SupportsExpression) Supported => (true, true);
+//        public override (bool SupportsEye, bool SupportsExpression) Supported => (true, true);
 
-        public override (bool eyeSuccess, bool expressionSuccess) Initialize(bool eyeAvailable, bool expressionAvailable)
+//        public override (bool eyeSuccess, bool expressionSuccess) Initialize(bool eyeAvailable, bool expressionAvailable)
         {
             ModuleInformation.Name = "ALVR";
 
@@ -225,7 +225,7 @@ namespace QuestProModule
             SetParam(p, LipTightenerL, MouthTightenerLeft);
         }
 
-        public override void Update()
+//        public override void Update()
         {
             byte[] packet;
             try
@@ -256,7 +256,7 @@ namespace QuestProModule
             }
         }
 
-        public override void Teardown()
+//        public override void Teardown()
         {
             socket.Close();
         }
