@@ -65,15 +65,15 @@ public class FbMessage
 
     // Face Expressions
 
-    Expressions[FaceFb.EyesLookUpL] *= 0.55f;
-    Expressions[FaceFb.EyesLookUpR] *= 0.55f;
-    Expressions[FaceFb.EyesLookDownL] *= 1.5f;
-    Expressions[FaceFb.EyesLookDownR] *= 1.5f;
+    Expressions[(int)FaceFb.EyesLookUpL] *= 0.55f;
+    Expressions[(int)FaceFb.EyesLookUpR] *= 0.55f;
+    Expressions[(int)FaceFb.EyesLookDownL] *= 1.5f;
+    Expressions[(int)FaceFb.EyesLookDownR] *= 1.5f;
 
-    Expressions[FaceFb.EyesLookLeftL] *= 0.85f;
-    Expressions[FaceFb.EyesLookRightL] *= 0.85f;
-    Expressions[FaceFb.EyesLookLeftR] *= 0.85f;
-    Expressions[FaceFb.EyesLookRightR] *= 0.85f;
+    Expressions[(int)FaceFb.EyesLookLeftL] *= 0.85f;
+    Expressions[(int)FaceFb.EyesLookRightL] *= 0.85f;
+    Expressions[(int)FaceFb.EyesLookLeftR] *= 0.85f;
+    Expressions[(int)FaceFb.EyesLookRightR] *= 0.85f;
 
     // Hack: turn rots to looks
     // Pitch = 29(left)-- > -29(right)
@@ -81,47 +81,47 @@ public class FbMessage
 
     if (pitchL > 0)
     {
-      Expressions[FaceFb.EyesLookLeftL] = Math.Min(1, (float)(pitchL / 29.0)) * SranipalNormalizer;
-      Expressions[FaceFb.EyesLookRightL] = 0;
+      Expressions[(int)FaceFb.EyesLookLeftL] = Math.Min(1, (float)(pitchL / 29.0)) * SranipalNormalizer;
+      Expressions[(int)FaceFb.EyesLookRightL] = 0;
     }
     else
     {
-      Expressions[FaceFb.EyesLookLeftL] = 0;
-      Expressions[FaceFb.EyesLookRightL] = Math.Min(1, (float)(-pitchL / 29.0)) * SranipalNormalizer;
+      Expressions[(int)FaceFb.EyesLookLeftL] = 0;
+      Expressions[(int)FaceFb.EyesLookRightL] = Math.Min(1, (float)(-pitchL / 29.0)) * SranipalNormalizer;
     }
 
     if (yawL > 0)
     {
-      Expressions[FaceFb.EyesLookUpL] = Math.Min(1, (float)(yawL / 27.0)) * SranipalNormalizer;
-      Expressions[FaceFb.EyesLookDownL] = 0;
+      Expressions[(int)FaceFb.EyesLookUpL] = Math.Min(1, (float)(yawL / 27.0)) * SranipalNormalizer;
+      Expressions[(int)FaceFb.EyesLookDownL] = 0;
     }
     else
     {
-      Expressions[FaceFb.EyesLookUpL] = 0;
-      Expressions[FaceFb.EyesLookDownL] = Math.Min(1, (float)(-yawL / 27.0)) * SranipalNormalizer;
+      Expressions[(int)FaceFb.EyesLookUpL] = 0;
+      Expressions[(int)FaceFb.EyesLookDownL] = Math.Min(1, (float)(-yawL / 27.0)) * SranipalNormalizer;
     }
 
 
     if (pitchR > 0)
     {
-      Expressions[FaceFb.EyesLookLeftR] = Math.Min(1, (float)(pitchR / 29.0)) * SranipalNormalizer;
-      Expressions[FaceFb.EyesLookRightR] = 0;
+      Expressions[(int)FaceFb.EyesLookLeftR] = Math.Min(1, (float)(pitchR / 29.0)) * SranipalNormalizer;
+      Expressions[(int)FaceFb.EyesLookRightR] = 0;
     }
     else
     {
-      Expressions[FaceFb.EyesLookLeftR] = 0;
-      Expressions[FaceFb.EyesLookRightR] = Math.Min(1, (float)(-pitchR / 29.0)) * SranipalNormalizer;
+      Expressions[(int)FaceFb.EyesLookLeftR] = 0;
+      Expressions[(int)FaceFb.EyesLookRightR] = Math.Min(1, (float)(-pitchR / 29.0)) * SranipalNormalizer;
     }
 
     if (yawR > 0)
     {
-      Expressions[FaceFb.EyesLookUpR] = Math.Min(1, (float)(yawR / 27.0)) * SranipalNormalizer;
-      Expressions[FaceFb.EyesLookDownR] = 0;
+      Expressions[(int)FaceFb.EyesLookUpR] = Math.Min(1, (float)(yawR / 27.0)) * SranipalNormalizer;
+      Expressions[(int)FaceFb.EyesLookDownR] = 0;
     }
     else
     {
-      Expressions[FaceFb.EyesLookUpR] = 0;
-      Expressions[FaceFb.EyesLookDownR] = Math.Min(1, (float)(-yawR / 27.0)) * SranipalNormalizer;
+      Expressions[(int)FaceFb.EyesLookUpR] = 0;
+      Expressions[(int)FaceFb.EyesLookDownR] = Math.Min(1, (float)(-yawR / 27.0)) * SranipalNormalizer;
     }
   }
 }
