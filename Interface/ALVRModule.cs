@@ -230,7 +230,7 @@ namespace QuestProModule
             byte[] packet;
             try
             {
-                var peer = new IPEndPoint(IPAddress.Any, PORT);
+                var peer = new IPEndPoint(IPAddress.Any, 0xA1F7); //the 0xA1F7 used to be PORT but the function can't seem to find that value for no reason
                 packet = socket.Receive(ref peer);
             }
             catch (Exception)
