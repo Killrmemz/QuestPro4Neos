@@ -225,40 +225,40 @@ namespace QuestProModule
 //            SetParam(p, LipTightenerL, MouthTightenerLeft);
         }
 
-//        public override void Update()
-//        {
-//            byte[] packet;
-//            try
-//            {
-//                var peer = new IPEndPoint(IPAddress.Any, PORT);
-//                packet = socket.Receive(ref peer);
-//            }
-//            catch (Exception)
-//            {
-//                return;
-//            }
-//
-//            int cursor = 0;
-//            while (cursor + 8 <= packet.Length)
-//            {
-//                string str = Encoding.ASCII.GetString(packet, 0, 8);
-//                cursor += 8;
-//
-//                switch (str)
-//                {
-//                    case "FbExpression\0\0":
-//                        SetFaceFbParams(GetParams(packet, ref cursor, (int)FaceFbMax));
-//                        break;
-//                    default:
-//                        Logger.LogError("[ALVR Module] Unrecognized prefix");
-//                        break;
-//                }
-//            }
-//        }
-//
-//        public override void Teardown()
-//        {
-//            socket.Close();
-//        }
+        public override void StartClient()
+        {
+            byte[] packet;
+            try
+            {
+                var peer = new IPEndPoint(IPAddress.Any, PORT);
+                packet = socket.Receive(ref peer);
+            }
+            catch (Exception)
+            {
+                return;
+            }
+
+            int cursor = 0;
+            while (cursor + 8 <= packet.Length)
+            {
+                string str = Encoding.ASCII.GetString(packet, 0, 8);
+                cursor += 8;
+
+                switch (str)
+                {
+                    case "FbExpression\0\0":
+                        SetFaceFbParams(GetParams(packet, ref cursor, (int)FaceFbMax));
+                        break;
+                    default:
+                        Logger.LogError("[ALVR Module] Unrecognized prefix");
+                        break;
+                }
+            }
+        }
+
+        public override void Dispose()
+        {
+            socket.Close();
+        }
     }
 }
