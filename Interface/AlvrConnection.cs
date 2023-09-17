@@ -45,16 +45,6 @@ public class AlvrConnection : IDisposable
             // Ignore these, we do this ourselves.
             break;
           case "/tracking/eye_htc":
-          case "/tracking/lip_htc":
-            UniLog.Error("Unexpected ALVR message in loading area, please use facebook eye tracking.");
-            break;
-          case "/tracking/face_fb":
-            _workingMessage.ParseOsc(message);
-            if (!_stopToken.IsCancellationRequested)
-            {
-              _messageTarget.Swap(ref _workingMessage);
-            }
-            break;
         }
       }
       catch (Exception ex)
