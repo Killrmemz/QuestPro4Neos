@@ -88,16 +88,16 @@ namespace QuestProModule
 //        public override (bool SupportsEye, bool SupportsExpression) Supported => (true, true);
 
 //        public override (bool eyeSuccess, bool expressionSuccess) Initialize(bool eyeAvailable, bool expressionAvailable)
-        {
-            ModuleInformation.Name = "ALVR";
-
-            var stream = GetType().Assembly.GetManifestResourceStream("ALVRModule.Assets.alvr.png");
-            ModuleInformation.StaticImages = stream != null ? new List<Stream> { stream } : ModuleInformation.StaticImages;
-
-            socket.Client.ReceiveTimeout = 100;
-
-            return (true, true);
-        }
+//        {
+//            ModuleInformation.Name = "ALVR";
+//
+//            var stream = GetType().Assembly.GetManifestResourceStream("ALVRModule.Assets.alvr.png");
+//            ModuleInformation.StaticImages = stream != null ? new List<Stream> { stream } : ModuleInformation.StaticImages;
+//
+//            socket.Client.ReceiveTimeout = 100;
+//
+//            return (true, true);
+//        }
 
         private static float[] GetParams(byte[] packet, ref int cursor, int param_count)
         {
@@ -226,39 +226,39 @@ namespace QuestProModule
         }
 
 //        public override void Update()
-        {
-            byte[] packet;
-            try
-            {
-                var peer = new IPEndPoint(IPAddress.Any, PORT);
-                packet = socket.Receive(ref peer);
-            }
-            catch (Exception)
-            {
-                return;
-            }
-
-            int cursor = 0;
-            while (cursor + 8 <= packet.Length)
-            {
-                string str = Encoding.ASCII.GetString(packet, 0, 8);
-                cursor += 8;
-
-                switch (str)
-                {
-                    case "FbExpression\0\0":
-                        SetFaceFbParams(GetParams(packet, ref cursor, (int)FaceFbMax));
-                        break;
-                    default:
-                        Logger.LogError("[ALVR Module] Unrecognized prefix");
-                        break;
-                }
-            }
-        }
-
+//        {
+//            byte[] packet;
+//            try
+//            {
+//                var peer = new IPEndPoint(IPAddress.Any, PORT);
+//                packet = socket.Receive(ref peer);
+//            }
+//            catch (Exception)
+//            {
+//                return;
+//            }
+//
+//            int cursor = 0;
+//            while (cursor + 8 <= packet.Length)
+//            {
+//                string str = Encoding.ASCII.GetString(packet, 0, 8);
+//                cursor += 8;
+//
+//                switch (str)
+//                {
+//                    case "FbExpression\0\0":
+//                        SetFaceFbParams(GetParams(packet, ref cursor, (int)FaceFbMax));
+//                        break;
+//                    default:
+//                        Logger.LogError("[ALVR Module] Unrecognized prefix");
+//                        break;
+//                }
+//            }
+//        }
+//
 //        public override void Teardown()
-        {
-            socket.Close();
-        }
+//        {
+//            socket.Close();
+//        }
     }
 }
