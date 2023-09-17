@@ -3,16 +3,15 @@ using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using QuestProMod;
-using FBExpression;
-using FbMessage;
-using FbInputDriver;
+using VRCFaceTracking;
+using VRCFaceTracking.Core.Params.Expressions;
+using static VRCFaceTracking.Core.Params.Expressions.UnifiedExpressions;
 
 namespace QuestProModule
 {
-    using static FbExpression;
+    using static FaceFb;
 
-    public enum FbExpression
+    public enum FaceFb
     {
         BrowLowererL = 0,
         BrowLowererR = 1,
