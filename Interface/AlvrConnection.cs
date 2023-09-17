@@ -44,7 +44,7 @@ public class AlvrConnection : IDisposable
           case "/tracking/eye/right/Active":
             // Ignore these, we do this ourselves.
             break;
-          case "/tracking/eye_htc":
+//          case "/tracking/eye_htc":
         }
       }
       catch (Exception ex)
